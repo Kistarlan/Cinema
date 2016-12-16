@@ -80,3 +80,5 @@ C:\DiskD\Documents\Oleg\University\Cinema\Cinema\bin\Microsoft.Owin.Security.Mic
 C:\DiskD\Documents\Oleg\University\Cinema\Cinema\obj\Debug\Cinema.csprojResolveAssemblyReference.cache
 C:\DiskD\Documents\Oleg\University\Cinema\Cinema\obj\Debug\Cinema.dll
 C:\DiskD\Documents\Oleg\University\Cinema\Cinema\obj\Debug\Cinema.pdb
+C:\DiskD\Documents\Oleg\University\Cinema\Cinema\obj\Debug\Cinema.Migrations.MigrateDb.resources
+C:\DiskD\Documents\Oleg\University\Cinema\Cinema\obj\Debug\Cinema.csproj.GenerateResource.Cache

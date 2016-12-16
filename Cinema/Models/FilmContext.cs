@@ -11,11 +11,12 @@ namespace Cinema.Models
         public DbSet<Film> Films { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Actor> Actors { get; set; }
-/*
-        public DbSet<Cinema> Cinemas { get; set; }
-        public DbSet<Hall> Halls { get; set; }
-        public DbSet<Session> Sessions { get; set; }
-*/
+        public FilmContext() : base("DefaultConnection"){ }
+        /*
+                public DbSet<Cinema> Cinemas { get; set; }
+                public DbSet<Hall> Halls { get; set; }
+                public DbSet<Session> Sessions { get; set; }
+        */
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Genre>().HasMany(g => g.Films)

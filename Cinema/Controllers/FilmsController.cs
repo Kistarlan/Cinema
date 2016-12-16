@@ -35,13 +35,14 @@ namespace Cinema.Controllers
             return View(film);
         }
 
+        [HttpGet]
         // GET: Films/Create
         public ActionResult Create()
         {
             ViewBag.Actors = db.Actors.ToList();
             ViewBag.Genres = db.Genres.ToList();
             Film film = new Film();
-            return View();
+            return View(film);
         }
 
         // POST: Films/Create
@@ -49,7 +50,7 @@ namespace Cinema.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Description,Director,year")] Film film, int[] selectedGenres, int[] selectedActors)
+        public ActionResult Create([Bind(Include = "Id,Name,Director,year")] Film film, int[] selectedGenres, int[] selectedActors)
         {
 
 

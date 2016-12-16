@@ -5,15 +5,14 @@ namespace Cinema.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Cinema.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Cinema.Models.FilmContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            ContextKey = "Cinema.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Cinema.Models.ApplicationDbContext context)
+        protected override void Seed(Cinema.Models.FilmContext context)
         {
             //  This method will be called after migrating to the latest version.
 
