@@ -15,7 +15,7 @@ namespace Cinema.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "This site website was create by Rozkvas Oleh";
 
             return View();
         }
