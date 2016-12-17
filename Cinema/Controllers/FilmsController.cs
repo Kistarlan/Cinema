@@ -44,16 +44,10 @@ namespace Cinema.Controllers
             Film film = new Film();
             return View(film);
         }
-
-        // POST: Films/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Director,year")] Film film, int[] selectedGenres, int[] selectedActors)
+        public ActionResult Create([Bind(Include = "Id,Name,Director,Year")] Film film, int[] selectedActors, int[] selectedGenres)//, int[] selectedGenres, int[] selectedActors)
         {
-
-
             if (ModelState.IsValid)
             {
                 db.Films.Add(film);
@@ -68,8 +62,12 @@ namespace Cinema.Controllers
                     foreach (var g in db.Genres.Where(fi => selectedGenres.Contains(fi.Id)))
                         film.Genres.Add(g);
                 }
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
 
+            ViewBag.Actors = db.Actors.ToList();
+            ViewBag.Genres = db.Genres.ToList();
             return View(film);
         }
 
@@ -85,6 +83,8 @@ namespace Cinema.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Actors = db.Actors.ToList();
+            ViewBag.Genres = db.Genres.ToList();
             return View(film);
         }
 
@@ -93,12 +93,34 @@ namespace Cinema.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Description,Director,year")] Film film)
+        public ActionResult Edit([Bind(Include = "Id,Name,Description,Director,year")] Film film, int[] selectedActors, int[] selectedGenres)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(film).State = EntityState.Modified;
+                Film newFilm = db.Films.Find(film.Id);
+                newFilm.Name = film.Name;
+                newFilm.Description = film.Description;
+                newFilm.Director = film.Director;
+                newFilm.year = film.year;
                 db.SaveChanges();
+
+                newFilm.Actors.Clear();
+                if (selectedActors != null)
+                {
+                    foreach (var actor in db.Actors.Where(thisfilm => selectedActors.Contains(thisfilm.Id)))
+                        newFilm.Actors.Add(actor);
+                }
+
+                newFilm.Genres.Clear();
+                if (selectedGenres != null)
+                {
+                    foreach (var genre in db.Genres.Where(fi => selectedGenres.Contains(fi.Id)))
+                        newFilm.Genres.Add(genre);
+                }
+
+                db.Entry(newFilm).State = EntityState.Modified;
+                db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
             return View(film);

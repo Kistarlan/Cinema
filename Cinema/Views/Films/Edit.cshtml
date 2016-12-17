@@ -1,4 +1,5 @@
-﻿@model Cinema.Models.Film
+﻿@using Cinema.Models
+@model Film
 
 @{
     ViewBag.Title = "Edit";
@@ -48,13 +49,27 @@
                 @Html.ValidationMessageFor(model => model.year, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+        <div>
+            @foreach (Actor actor in ViewBag.Actors)
+            {
+                <input type="checkbox" name="selectedActors" value="@actor.Id"
+                       @(Model.Actors.Contains(actor) ? "checked=\"checked\"" : "") />@(actor.Name + " " + actor.Surname)<br />
+            }
         </div>
-    </div>
+        <div>
+            <div class="editor-label"><b>Жанри:</b></div>
+            @foreach (Genre genre in ViewBag.Genres)
+            {
+                <input type="checkbox" name="selectedGenres" value="@genre.Id"
+                       @(Model.Genres.Contains(genre) ? "checked=\"checked\"" : "") />@genre.Name <br />
+            }
+        </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+</div>
 }
 
 <div>
