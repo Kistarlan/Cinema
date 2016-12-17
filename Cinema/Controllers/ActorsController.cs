@@ -38,6 +38,7 @@ namespace Cinema.Controllers
         // GET: Actors/Create
         public ActionResult Create()
         {
+            
             return View();
         }
 
