@@ -82,3 +82,6 @@ C:\DiskD\Documents\Oleg\University\Cinema\Cinema\obj\Debug\Cinema.dll
 C:\DiskD\Documents\Oleg\University\Cinema\Cinema\obj\Debug\Cinema.pdb
 C:\DiskD\Documents\Oleg\University\Cinema\Cinema\obj\Debug\Cinema.Migrations.MigrateDb.resources
 C:\DiskD\Documents\Oleg\University\Cinema\Cinema\obj\Debug\Cinema.csproj.GenerateResource.Cache
+C:\DiskD\Documents\Oleg\University\Cinema\Cinema\obj\Debug\Cinema.Migrations.addCinemas.resources
+C:\DiskD\Documents\Oleg\University\Cinema\Cinema\obj\Debug\Cinema.Migrations.CinemasFix.resources
+C:\DiskD\Documents\Oleg\University\Cinema\Cinema\obj\Debug\Cinema.Migrations.CinemasFix1.resources

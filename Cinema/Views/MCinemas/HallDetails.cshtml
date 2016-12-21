@@ -1,0 +1,43 @@
+﻿@using Cinema.Models
+@model Hall
+
+@{
+    ViewBag.Title = "Hall Details";
+}
+<div>
+    <h2>Datails hall № @Model.Number.ToString() in @ViewBag.cinema</h2>
+</div>
+<div>
+    <h4>Hall</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cinema.Name)
+        </dt>
+
+        <dd>
+            <div class="editor-label"><b>@ViewBag.cinema</b></div>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberSeats)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberSeats)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "HallEdit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to Cinema", "Details", new { id = Model.CinemaId})
+</p>

@@ -201,6 +201,7 @@
     <Compile Include="Controllers\GenresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MCinemasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -208,9 +209,22 @@
     <Compile Include="Migrations\201612162036558_MigrateDb.Designer.cs">
       <DependentUpon>201612162036558_MigrateDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612181346202_addCinemas.cs" />
+    <Compile Include="Migrations\201612181346202_addCinemas.Designer.cs">
+      <DependentUpon>201612181346202_addCinemas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612181409084_CinemasFix.cs" />
+    <Compile Include="Migrations\201612181409084_CinemasFix.Designer.cs">
+      <DependentUpon>201612181409084_CinemasFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612181423346_CinemasFix1.cs" />
+    <Compile Include="Migrations\201612181423346_CinemasFix1.Designer.cs">
+      <DependentUpon>201612181423346_CinemasFix1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Actor.cs" />
+    <Compile Include="Models\CinemaModels.cs" />
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\FilmContext.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -294,6 +308,13 @@
     <Content Include="Views\Genres\Details.cshtml" />
     <Content Include="Views\Genres\Edit.cshtml" />
     <Content Include="Views\Genres\Index.cshtml" />
+    <Content Include="Views\MCinemas\Create.cshtml" />
+    <Content Include="Views\MCinemas\Delete.cshtml" />
+    <Content Include="Views\MCinemas\Details.cshtml" />
+    <Content Include="Views\MCinemas\Edit.cshtml" />
+    <Content Include="Views\MCinemas\Index.cshtml" />
+    <Content Include="Views\MCinemas\HallDetails.cshtml" />
+    <Content Include="Views\MCinemas\HallEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -306,6 +327,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201612162036558_MigrateDb.resx">
       <DependentUpon>201612162036558_MigrateDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612181346202_addCinemas.resx">
+      <DependentUpon>201612181346202_addCinemas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612181409084_CinemasFix.resx">
+      <DependentUpon>201612181409084_CinemasFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612181423346_CinemasFix1.resx">
+      <DependentUpon>201612181423346_CinemasFix1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

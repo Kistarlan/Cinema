@@ -26,10 +26,12 @@ namespace Cinema.Models
         public int year { set; get; }
         public virtual ICollection<Genre> Genres { set; get; }
         public virtual ICollection<Actor> Actors { set; get; }
+        public virtual ICollection<Session> Sessions { set; get; }
         public Film()
         {
             Genres = new List<Genre>();
             Actors = new List<Actor>();
+            Sessions = new List<Session>();
         }
 
 

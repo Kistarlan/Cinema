@@ -13,6 +13,7 @@ namespace Cinema.Controllers
             return View();
         }
 
+        [Authorize(Roles = "admin")]
         public ActionResult About()
         {
             ViewBag.Message = "This site website was create by Rozkvas Oleh";
